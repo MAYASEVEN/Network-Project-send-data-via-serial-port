@@ -1,8 +1,6 @@
 #!/usr/bin/env python
 #-*- coding:UTF-8 -*-
-import serial, os, subprocess, hashlib, time, binascii, base64
-from threading import Thread
-
+import serial, os, hashlib, binascii, base64
 def main():
     os.system(['clear', 'cls'][os.name == 'nt'])
     print   "###################################################"
