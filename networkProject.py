@@ -134,10 +134,10 @@ def receiveSW():
         crcCheck = packetR[k][-8:]
         crcPacket = binascii.crc32(packetR[k][:-8]) & 0xffffffff
         print "Packet number %s's header is %s" % (k, packetR[k][:8])
-        if crcCheck == "%08x" %crcPacket:
+        if crcCheck == "%08x" % crcPacket:
             print "Packet number %s CRC is checked " % k + "(%s,%08x)" % (crcCheck, crcPacket)
-            if int(packetR[k][2:6],16) == k:
-                ser.write("%d" %k + "\n")
+            if int(packetR[k][2:6], 16) == k:
+                ser.write("%d" % k + "\n")
                 print "Sending ACK %s" % k + "\n"
             else:
                 continue
